@@ -28,7 +28,27 @@ namespace Resturaunt_web.Controllers
             return View();
         }
 
-        public IActionResult Admin()
+        public IActionResult AdminHomepage()
+        {
+            return View();
+        }
+
+        public IActionResult AdminDeals()
+        {
+            return View();
+        }
+
+        public IActionResult AdminMenu()
+        {
+            return View();
+        }
+
+        public IActionResult AdminReservation()
+        {
+            return View();
+        }
+
+        public IActionResult AdminUser()
         {
             return View();
         }
