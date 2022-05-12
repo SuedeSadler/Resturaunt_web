@@ -2,11 +2,29 @@
     ViewData["Title"] = "Admin Homepage";
     Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Admin Homepage</p>
+<body>
+    <div class="return" style="height:40px;Background-color:D3D3D3;">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
+    </div>
 
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">Reservation Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">User Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">Menu Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">Specials/Deals Manager</a>
+    <div class="colomn" style="width:20%;display:grid;grid-template-columns: 1fr 1fr 1fr 1fr;margin-left:55px">
+
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">
+            <div class="AdminOption" style="width:400px;height:400px;background-color:D3D3D3;border-style:solid;border-width:1px;border-radius:25px;margin:10px;"><center style="font-size:50px;">Reservation Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">
+            <div class="AdminOption" style="width:400px;height:400px;background-color:D3D3D3;border-style:solid;border-width:1px;border-radius:25px;margin:10px;"><center style="font-size:50px;">User Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
+            <div class="AdminOption" style="width:400px;height:400px;background-color:D3D3D3;border-style:solid;border-width:1px;border-radius:25px;margin:10px;"><center style="font-size:50px;">Menu Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
+            <div class="AdminOption" style="width:400px;height:400px;background-color:D3D3D3;border-style:solid;border-width:1px;border-radius:25px;margin:10px;"><center style="font-size:50px;">Deals/Specials Manager</center></div>
+        </a>
+    </div>
+</body>
