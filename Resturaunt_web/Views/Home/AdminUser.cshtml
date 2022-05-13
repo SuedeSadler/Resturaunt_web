@@ -2,4 +2,19 @@
     ViewData["Title"] = "User Manager";
     Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
+<head>
+    <link rel="stylesheet" href="~/css/admin.css" />
+</head>
+
+<body>
+    <div class="return">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
+    </div>
+
+    <div class="PageHeader">
+        <h1>
+            User Management
+        </h1>
+    </div>
+
+</body>

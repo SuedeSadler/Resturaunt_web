@@ -2,11 +2,37 @@
     ViewData["Title"] = "Admin Homepage";
     Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
+<head>
+    <link rel="stylesheet" href="~/css/admin.css" />
+</head>
 
-<p>Admin Homepage</p>
+<body>
+    <div class="return">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
+    </div>
 
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">Reservation Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">User Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">Menu Manager</a>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">Specials/Deals Manager</a>
+    <div class="column">
+
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">
+            <div class="AdminOption"><center>Reservation Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">
+            <div class="AdminOption"><center>User Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
+            <div class="AdminOption"><center>Menu Manager</center></div>
+        </a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
+            <div class="AdminOption"><center>Deals/Specials Manager</center></div>
+        </a>
+    </div>
+</body>
+
+<style>
+    
+
+</style>
