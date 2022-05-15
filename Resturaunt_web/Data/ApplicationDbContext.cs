@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Resturaunt_web.Models;
 
 namespace Resturaunt_web.Data
 {
@@ -12,5 +13,6 @@ namespace Resturaunt_web.Data
             : base(options)
         {
         }
+        public DbSet<Resturaunt_web.Models.Reservations> Reservations { get; set; }
     }
 }
