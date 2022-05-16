@@ -6,6 +6,78 @@
     <link rel="stylesheet" href="~/css/admin.css" />
 </head>
 
+<style>
+    body {
+        background-color: #ccebff;
+        margin: 5px 
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+.topnav .search-container {
+  float: left;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float:right;
+  padding: 10px 20px;
+  margin-top: 8px;
+  margin-right: 35px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #b6ff00;
+  padding-left: 10px
+}
+
+ screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: left;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        padding-bottom: 100px
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ccebff;
+    }
+</style>
+
+
+
 <body>
     <div class="return">
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
@@ -16,5 +88,71 @@
             User Management
         </h1>
     </div>
+    <div class="topnav">
+
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="button" onclick="alert('Loading..')">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h2>List</h2>
+
+    <table>
+        <tr>
+            <th style="border: 2px solid DodgerBlue;">ID</th>
+            <th style="border: 2px solid DodgerBlue;">Name</th>
+            <th style="border: 2px solid DodgerBlue;">Email</th>
+            <th style="border: 2px solid DodgerBlue;">Date</th>
+
+        </tr>
+        <tr>
+            <td style="border: 2px solid MediumSeaGreen;"> 415</td>
+            <td style="border: 2px solid MediumSeaGreen;">Maria Anders</td>
+            <td style="border: 2px solid MediumSeaGreen;">Maria@gmail.com</td>
+            <td style="border: 2px solid MediumSeaGreen;">12/03/22</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid MediumSeaGreen;">252</td>
+            <td style="border: 2px solid MediumSeaGreen;">Francisco Chang</td>
+            <td style="border: 2px solid MediumSeaGreen;">Francisco.c@hotmail.com</td>
+            <td style="border: 2px solid MediumSeaGreen;">13/03/22</td>
+
+        </tr>
+        <tr>
+            <td style="border: 2px solid MediumSeaGreen;">784</td>
+            <td style="border: 2px solid MediumSeaGreen;">Roland Mendel</td>
+            <td style="border: 2px solid MediumSeaGreen;">Roland@icloud.com</td>
+            <td style="border: 2px solid MediumSeaGreen;">14/04/22</td>
+
+        </tr>
+        <tr>
+            <td style="border: 2px solid MediumSeaGreen;">150</td>
+            <td style="border: 2px solid MediumSeaGreen;">Helen Bennett</td>
+            <td style="border: 2px solid MediumSeaGreen;">Helen.B@yahoo.com</td>
+            <td style="border: 2px solid MediumSeaGreen;">15/05/22</td>
+
+        </tr>
+
+    </table>
+    <button type="button" Add List="alert('Hello world!')">Add Users</button>
+
 
 </body>
+
+
+
+
+
+
