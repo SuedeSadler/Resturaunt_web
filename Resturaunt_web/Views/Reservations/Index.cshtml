@@ -2,8 +2,13 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
+<link rel="stylesheet" href="~/css/admin.css" />
+
+<div class="return">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
+</div>
 
  <div class="PageHeader">
         <h1>
@@ -11,7 +16,7 @@
         </h1>
     </div>
 <div class="container  p-4 mb-4">
-    <div style="background-color:royalblue; border-top:solid; width:1000px; ">
+    <div class="table">
             <div class="form-group">
                 <input type="text" name="search" id="search" aria-describedby="HelpId" placeholder="search" width="100" float="right" />
 
