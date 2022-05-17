@@ -2,23 +2,23 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
+<link rel="stylesheet" href="~/css/admin.css" />
 
- <div class="PageHeader">
+<div class="return">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
+</div>
+
         <h1>
             Reservation Management
         </h1>
-    </div>
 <div class="container  p-4 mb-4">
-    <div style="background-color:royalblue; border-top:solid; width:1000px; ">
-            <div class="form-group">
-                <input type="text" name="search" id="search" aria-describedby="HelpId" placeholder="search" width="100" float="right" />
+    <div class="table">
 
-            </div>
-            <div style="border-top:solid">
+            <div>
                 <table style="width:100%">
-                    <p>
+                    <p style="margin-top:10px;margin-bottom:10px;">
                         <a asp-action="Create">Create New</a>
                     </p>
                     <table class="table">
@@ -67,8 +67,8 @@
                                     @Html.DisplayFor(modelItem => item.OrderId)
                                 </td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
                                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                 </td>
                             </tr>

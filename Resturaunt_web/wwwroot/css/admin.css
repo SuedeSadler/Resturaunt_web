@@ -1,31 +1,57 @@
-﻿.column {
+﻿:root {
+    --lightgrey: D3D3D3;
+    --background: royalblue;
+}
+
+.column {
     width: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-left: 55px
+    margin-left: 5%;
 }
 
 .AdminOption {
-    width: 400px;
-    height: 400px;
-    background-color: D3D3D3;
+    width: 200px;
+    height: 200px;
+    background-color: var(--lightgrey);
     border-style: solid;
     border-width: 1px;
     border-radius: 25px;
     margin: 10px;
 }
 
-    .AdminOption center {
-        font-size: 50px;
-    }
+.AdminOption center {
+    font-size: 1vw;
+}
 
 .return {
     height: 40px;
-    Background-color: D3D3D3;
+    Background-color: var(--lightgrey);
 }
 
-.PageHeader {
-    background-color: royalblue;
+H1 {
+    background-color: var(--background);
     border: solid;
     text-align: center
+}
+
+.table {
+    background-color: var(--background);
+    border-top: solid;
+    width: 1000px;
+}
+
+.table a {
+    color: black;
+    border: solid;
+    padding: 3px;
+    background-color: white;
+}
+th {
+    font-size: 20px;
+}
+
+td {
+    font-weight: 400;
+    font-size: 20px;
 }
