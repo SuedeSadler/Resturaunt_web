@@ -16,5 +16,6 @@ namespace Resturaunt_web.Data
         public DbSet<Resturaunt_web.Models.Reservations> Reservations { get; set; }
         public DbSet<Resturaunt_web.Models.Users> Users { get; set; }
         public DbSet<Resturaunt_web.Models.Menu> Menu { get; set; }
+        public DbSet<Resturaunt_web.Models.Usermanagement> Usermanagement { get; set; }
     }
 }
