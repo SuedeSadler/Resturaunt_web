@@ -13,7 +13,7 @@ namespace Resturaunt_web.Models
         public DateTime Date { get; set; }
         public Usermanagement()
         {
-
+            
         }
     }
 }
