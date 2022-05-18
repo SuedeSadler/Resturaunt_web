@@ -51,22 +51,23 @@
                 </a>
             </div>
             <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">Admin</a>
                     <p>Menu Manager</p>
 
         
            
 
+        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">
+            <div class="AdminOption"><center>User Manager</center></div>
+        </a>
 
-                </a>
-            </div>
-            <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
-                    <p>Deals/Specials Manager</p>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Menus" asp-action="Index">
+            <div class="AdminOption"><center>Menu Manager</center></div>
+        </a>
 
-                </a>
-            </div>
-        </div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+            <div class="AdminOption"><center>Deals/Specials Manager</center></div>
+        </a>
     </div>
 </body>
 
