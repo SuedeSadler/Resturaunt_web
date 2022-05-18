@@ -7,27 +7,33 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-	<body>
-        <header>
-            <button>Admin</button>
-            <center><img src="~/Theme/img/Logo.png"></center>
-        </header>
-		
-        <style>
-            header {
-                width: 100%;
-                height: 300px;
-                Background-color: D3D3D3;
-            }
-            button {
-                display: block;
-                margin-left: auto;
-                margin-right: 0px;
-            }
-        </style>
+<body>
+    <header>
+        <button>Admin</button>
+        <center><img src="~/Theme/img/Logo.png"></center>
+    </header>
 
-		<div class="main">
-			@RenderBody()
-		</div>
-	</body>
+    <style>
+        header {
+            width: 100%;
+            height: 300px;
+            Background-color: D3D3D3;
+        }
+
+        button {
+            display: block;
+            margin-left: auto;
+            margin-right: 0px;
+        }
+    </style>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
 </html>
