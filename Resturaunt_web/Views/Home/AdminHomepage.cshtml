@@ -2,8 +2,29 @@
     ViewData["Title"] = "Admin Homepage";
     Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
+
+
+
 <head>
     <link rel="stylesheet" href="~/css/admin.css" />
+    <style>
+        center {
+            font-size:70px;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .container {
+            text-align:center;
+            padding: 100px;
+            border-bottom: 1px solid;
+            border-color: rgb(201, 199, 200);
+            background-color: rgb(251,252,148);
+            max-width: 2000px;
+        }
+    </style>
 </head>
 
 <body>
@@ -11,28 +32,36 @@
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
     </div>
 
-    <div class="column">
+    <div class="container">
+        <div class="row">
+            <div class="AdminOption">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">
+                    <center>Reservation Manager</center>
 
+                </a>
+            </div>
+            <div class="AdminOption">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">
+                    <center>User Manager</center>
 
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">
-            <div class="AdminOption"><center>Reservation Manager</center></div>
-        </a>
+                </a>
+            </div>
+            <div class="AdminOption">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
+                    <center>Menu Manager</center>
 
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">
-            <div class="AdminOption"><center>User Manager</center></div>
-        </a>
+                </a>
+            </div>
+            <div class="AdminOption">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
+                    <center>Deals/Specials Manager</center>
 
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
-            <div class="AdminOption"><center>Menu Manager</center></div>
-        </a>
-
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
-            <div class="AdminOption"><center>Deals/Specials Manager</center></div>
-        </a>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 
-<style>
-    
 
+<style>
 </style>
