@@ -1,9 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    Layout = "/Views/Shared/_HomeLayout.cshtml";
+    ViewData["Title"] = "Homepage";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
+<link rel="stylesheet" href="~/css/main.css" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<html>
+<body>
+    <div class="special">
+        
+    </div>
+    <div class="reservation">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Reservation"><button>Reserve</button></a>
+    </div>
+    <div class="menu">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Menu"><button>Menu</button></a>
+    </div>
+    <div class="social">
+        <div class ="socialLinks">
+
+        </div>
+        <div class="socialPhotos">
+
+        </div>
+    </div>
+</body>
+</html> 
