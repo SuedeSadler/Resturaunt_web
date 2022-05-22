@@ -20,9 +20,9 @@
     margin: 10px;
 }
 
-.AdminOption center {
-    font-size: 1vw;
-}
+    .AdminOption center {
+        font-size: 1vw;
+    }
 
 .return {
     height: 40px;
@@ -41,12 +41,12 @@ H1 {
     width: 1000px;
 }
 
-.table a {
-    color: black;
-    border: solid;
-    padding: 3px;
-    background-color: white;
-}
+    .table a {
+        color: black;
+        border: solid;
+        padding: 3px;
+        background-color: white;
+    }
 
 th {
     font-size: 20px;
@@ -56,5 +56,3 @@ td {
     font-weight: 400;
     font-size: 20px;
 }
-
-
