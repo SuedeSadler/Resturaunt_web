@@ -21,7 +21,6 @@
             padding: 100px;
             border-bottom: 1px solid;
             border-color: rgb(201, 199, 200);
-            background-color: rgb(251,252,148);
             max-width: 2000px;
         }
         p{font-size:50px;
@@ -37,39 +36,26 @@
 
     <div class="container">
         <div class="row">
-            <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminReservation">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Reservations" asp-action="Index">
+                <div class="AdminOption" style="width:400px; height:300px;">
                     <p>Reservation Manager</p>
-
-                </a>
-            </div>
-            <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminUser">
+                </div>
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">
+                <div class="AdminOption" style="width:400px; height:300px;">
                     <p>User Manager</p>
-
-
-                </a>
-            </div>
-            <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminMenu">
+                </div>
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Menus" asp-action="Index">
+                <div class="AdminOption" style="width:400px; height:300px;">
                     <p>Menu Manager</p>
-
-        
-           
-
-
-                </a>
-            </div>
-            <div class="AdminOption" style="width:400px; height:300px;">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminDeals">
-                    <p>Deals/Specials Manager</p>
-
-                </a>
-            </div>
+                </div>
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Deals" asp-action="Index">
+                <div class="AdminOption" style="width:400px; height:300px;">
+                    <p>Deals/Specials</p>
+                </div>
+            </a>
         </div>
     </div>
 </body>
-
-
-<style>
-</style>

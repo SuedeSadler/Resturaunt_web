@@ -23,36 +23,20 @@ namespace Resturaunt_web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult AdminHomepage()
         {
             return View();
         }
 
-        public IActionResult AdminDeals()
+        public IActionResult Menu()
         {
             return View();
         }
 
-        public IActionResult AdminMenu()
+        public IActionResult Reservation()
         {
             return View();
         }
-
-        public IActionResult AdminReservation()
-        {
-            return View();
-        }
-
-        public IActionResult AdminUser()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
