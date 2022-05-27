@@ -1,13 +1,17 @@
-@{ ViewData["Title"] = "Homepage";
-                Layout = "/Views/Shared/_HeaderLayout.cshtml"; }
+@model Resturaunt_web.Models.Users
+
+@{
+    ViewData["Title"] = "Reservation";
+    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
+}
 
 <html>
 <head>
     <link rel="stylesheet" href="~/css/main.css" />
-    </head>
+</head>
 <body>
     <div class="return">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Return</a>
 
     </div>
 
@@ -16,66 +20,76 @@
 
         <h1>Create Reservation</h1>
     </div>
-    <div class=" border border-dark container shadow p-4 mb-4"  >
+    <div class=" border border-dark container shadow p-4 mb-4">
 
 
 
-        <form action="results.html" method="GET" enctype="multipart/form-data">
+        <form asp-action="Reserve">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+
+                <div class="col">
+
+                    <label asp-for="FName">First Name:</label>
+                    <input asp-for="FName" class="form-control" type="text" name="name" id="name" required>
+
+                    <span asp-validation-for="FName" class="text-danger"></span>
+
+                </div>
+                <div class="col">
+
+
+                    <label asp-for="LName">Last Name:</label>
+                    <input asp-for="LName" class="form-control" type="text" name="name" id="name" required>
+                    <span asp-validation-for="LName" class="text-danger"></span>
+                </div>
+            </div>
             <div class="row">
 
                 <div class="col">
 
 
-                    <label for="start"> Date:</label>
+                    <label asp-for="Date"> Date:</label>
 
-                    <input class="form-control" type="date" id="start" name="trip-start"
+                    <input asp-for="Date" class="form-control" type="date" id="start" name="trip-start"
                            value="2022-07-22"
                            min="2022-01-01" max="2022-12-31">
+                    <span asp-validation-for="Date" class="text-danger"></span>
                 </div>
                 <div class="col">
 
 
-                    <label for="appt">Choose a time for your Reservation:</label>
+                    <label asp-for="Time">Choose a time for your Reservation:</label>
 
-                    <input  class="form-control"  type="time" id="appt" name="appt"
+                    <input asp-for="Time" class="form-control" type="time" id="appt" name="appt"
                            min="00:00" max="24:00" required>
+                    <span asp-validation-for="Time" class="text-danger"></span>
                 </div>
-            </div> 
+            </div>
 
             <div>
-                <label for="tentacles">Number of People:</label>
+                <label asp-for="NumPeople">Number of People:</label>
 
-                <input  class="form-control"  type="number" id="tentacles" name="tentacles"
+                <input asp-for="NumPeople" class="form-control" type="number" id="tentacles" name="tentacles"
                        min="1" max="100">
+                <span asp-validation-for="NumPeople" class="text-danger"></span>
             </div>
-            <div class="row">
 
-                <div class="col">
-
-                    <label for="name">First Name:</label>
-                    <input  class="form-control" type="text" name="name" id="name" required>
-
-                </div>
-                <div class="col">
-
-
-                    <label for="name">Last Name:</label>
-                    <input  class="form-control" type="text" name="name" id="name" required>
-                </div>
-            </div>
             <div class="row">
                 <div class="col">
 
-                    <label for="email">Email:</label>
-                    <input class="form-control"  type="email" name="email" id="email" required>
+                    <label asp-for="Email">Email:</label>
+                    <input asp-for="Email" class="form-control" type="email" name="email" id="email" required>
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="col">
 
 
-                    <label for="phone">Phone Number:</label>
+                    <label asp-for="Phone">Phone Number:</label>
 
-                    <input class="form-control"  type="tel" id="phone" name="phone"
-                          pattern="[0-9]{10}"    required>
+                    <input asp-for="Phone" class="form-control" type="tel" id="phone" name="phone"
+                           pattern="[0-9]{10}" required>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
             </div>
 
@@ -103,3 +117,7 @@
 </body>
 
 </html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
