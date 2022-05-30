@@ -1,6 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Homepage";
-    Layout = "/Views/Shared/_HeaderLayout.cshtml";
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
 }
 <link rel="stylesheet" href="~/css/main.css" />
 
@@ -11,17 +11,42 @@
         
     </div>
     <div class="reservation">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Reservation"><button>Reserve</button></a>
+        <div class="center" style="height:300px;">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Reservation">Reserve</a>
+        </div>
     </div>
-    <div class="menu">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Menus1" asp-action="Menu"><button>Menu</button></a>
+    <div class="menu row">
+        <div class="column" style="width:60%">
+            <img src="~/Theme/img/HomeMenu.jpg" style="width:100%; height:100%;" />
+        </div>
+        <div class="column" style="width:40%">
+            <div class="center" style="height:600px;">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Menus1" asp-action="Menu">Menu</a>
+            </div>
+        </div>
     </div>
     <div class="social">
-        <div class ="socialLinks">
+        <div class="socialLinks">
+            <a>Instagram</a>
+            <a>Facebook</a>
 
         </div>
         <div class="socialPhotos">
-
+            <div class="socialColumn">
+                <img src="~/Theme/img/Food/1.jpg" />
+                <img src="~/Theme/img/Food/2.jpg" />
+            </div>
+            <div class="socialColumn">
+                <img src="~/Theme/img/Food/7.jpg" />
+            </div>
+            <div class="socialColumn">
+                <img src="~/Theme/img/Food/4.jpg" />
+                <img src="~/Theme/img/Food/5.jpg" />
+            </div>
+            <div class="socialColumn">
+                <img src="~/Theme/img/Food/6.jpg" />
+                <img src="~/Theme/img/Food/3.jpg" />
+            </div>
         </div>
     </div>
 </body>
