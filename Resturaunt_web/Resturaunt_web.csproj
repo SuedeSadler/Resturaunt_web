@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="bootstrap" Version="5.1.3" />
+
+    <Content Remove="Views\Menus\Menu.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Menus\Menu.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.16" />
