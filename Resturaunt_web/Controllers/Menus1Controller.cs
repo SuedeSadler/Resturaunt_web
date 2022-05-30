@@ -165,5 +165,10 @@ namespace Resturaunt_web.Controllers
         {
             return _context.Menu.Any(e => e.MenuId == id);
         }
+
+        public async Task<IActionResult> Menu()
+        {
+            return View(await _context.Menu.ToListAsync());
+        }
     }
 }
