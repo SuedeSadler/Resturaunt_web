@@ -54,7 +54,7 @@ namespace Resturaunt_web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,FirstName,LastName,Email,Phone,Password")] Users users)
+        public async Task<IActionResult> Create([Bind("UserId,FName,LName,Date,Time,NumPeople,Email,Phone")] Users users)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Resturaunt_web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,FirstName,LastName,Email,Phone,Password")] Users users)
+        public async Task<IActionResult> Edit(int? id, [Bind("UserId,FName,LName,Date,Time,NumPeople,Email,Phone")] Users users)
         {
             if (id != users.UserId)
             {
