@@ -2,13 +2,16 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
 }
+<link rel="stylesheet" href="~/css/admin.css" />
 
-<h1>Create</h1>
+<div class="return">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Reservations1" asp-action="Index">Return</a>
+</div>
 
-<h4>Reservations1</h4>
-<hr />
+<h1>Create Item</h1>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -43,10 +46,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
