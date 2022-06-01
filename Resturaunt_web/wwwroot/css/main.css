@@ -40,6 +40,16 @@
     Background-color: var(--lightgrey);
 }
 
+.socialLinks img {
+    height: 150px;
+}
+
+.socialLinks p {
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
 .socialPhotos {
     width: 100%;
     display: flex;
