@@ -64,6 +64,10 @@ namespace Resturaunt_web.Controllers
             }
             return View(reservations1);
         }
+        public IActionResult Reservation()
+        {
+            return View();
+        }
 
         // GET: Reservations1/Edit/5
         public async Task<IActionResult> Edit(int? id)
