@@ -1,0 +1,21 @@
+@model IEnumerable<Resturaunt_web.Models.Menu>
+
+@{
+    ViewData["Title"] = "Homepage";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
+}
+
+<html>
+<link rel="stylesheet" href="~/css/main.css" />
+<body>
+    <div class="return">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Menus1" asp-action="Drinks">Drinks</a>
+    </div>
+    <div class="menu">
+
+    </div>
+</body>
+
+
+</html>
