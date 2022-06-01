@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Resturaunt_web.Data;
 
 namespace Resturaunt_web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220601045633_regoupdate")]
+    partial class regoupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,32 +246,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.HasKey("MenuId");
 
                     b.ToTable("Menu");
-                });
-
-            modelBuilder.Entity("Resturaunt_web.Models.Registered_Customers", b =>
-                {
-                    b.Property<int?>("CustomerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustomerEmail")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("CustomerName")
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("CustomerPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("int");
-
-                    b.HasKey("CustomerID");
-
-                    b.ToTable("Registered_Customers");
                 });
 
             modelBuilder.Entity("Resturaunt_web.Models.Reservations", b =>

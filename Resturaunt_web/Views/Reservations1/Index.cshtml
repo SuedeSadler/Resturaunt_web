@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Resturaunt_web.Models.Reservations>
+﻿@model IEnumerable<Resturaunt_web.Models.Reservations1>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +10,7 @@
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
 </div>
 
-<h1>Reservation Management</h1>
+<h1>Reservations Manager</h1>
 
 <div class="container  p-4 mb-4">
     <div class="table">
@@ -18,27 +18,22 @@
             <a asp-action="Create">Create New</a>
         </p>
         <table style="width:100%">
-
-
             <thead>
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
                     <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.NumPeople)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Time)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Date)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Cost)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.OrderId)
+                        @Html.DisplayNameFor(model => model.Booked_time)
                     </th>
                     <th></th>
                 </tr>
@@ -51,28 +46,25 @@
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => item.NumPeople)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Time)
+                            @Html.DisplayFor(modelItem => item.Booked_time)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Cost)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OrderId)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a asp-action="Edit" asp-route-id="@item.Reservation_Id">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Reservation_Id">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Reservation_Id">Delete</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-    </div> 
-    </div> 
+    </div>
+</div>
