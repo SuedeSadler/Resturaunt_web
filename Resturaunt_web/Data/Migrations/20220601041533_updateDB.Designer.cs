@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Resturaunt_web.Data;
 
 namespace Resturaunt_web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220601041533_updateDB")]
+    partial class updateDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,32 +248,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.ToTable("Menu");
                 });
 
-            modelBuilder.Entity("Resturaunt_web.Models.Registered_Customers", b =>
-                {
-                    b.Property<int?>("CustomerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustomerEmail")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("CustomerName")
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("CustomerPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("int");
-
-                    b.HasKey("CustomerID");
-
-                    b.ToTable("Registered_Customers");
-                });
-
             modelBuilder.Entity("Resturaunt_web.Models.Reservations", b =>
                 {
                     b.Property<int?>("Id")
@@ -300,33 +276,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Reservations");
-                });
-
-            modelBuilder.Entity("Resturaunt_web.Models.Reservations1", b =>
-                {
-                    b.Property<int?>("Reservation_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Booked_time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("NumPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.HasKey("Reservation_Id");
-
-                    b.ToTable("Reservations1");
                 });
 
             modelBuilder.Entity("Resturaunt_web.Models.Users", b =>

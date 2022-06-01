@@ -10,22 +10,22 @@ using Resturaunt_web.Models;
 
 namespace Resturaunt_web.Controllers
 {
-    public class ReservationsController : Controller
+    public class Reservations1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ReservationsController(ApplicationDbContext context)
+        public Reservations1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Reservations
+        // GET: Reservations1
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reservations.ToListAsync());
+            return View(await _context.Reservations1.ToListAsync());
         }
 
-        // GET: Reservations/Details/5
+        // GET: Reservations1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var reservations = await _context.Reservations
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (reservations == null)
+            var reservations1 = await _context.Reservations1
+                .FirstOrDefaultAsync(m => m.Reservation_Id == id);
+            if (reservations1 == null)
             {
                 return NotFound();
             }
 
-            return View(reservations);
+            return View(reservations1);
         }
 
-        // GET: Reservations/Create
+        // GET: Reservations1/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Reservations/Create
+        // POST: Reservations1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,NumPeople,Time,Date,Cost,OrderId")] Reservations reservations)
+        public async Task<IActionResult> Create([Bind("Reservation_Id,Name,Phone,Email,NumPeople,Booked_time")] Reservations1 reservations1)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(reservations);
+                _context.Add(reservations1);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(reservations);
+            return View(reservations1);
         }
 
-        // GET: Reservations/Edit/5
+        // GET: Reservations1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var reservations = await _context.Reservations.FindAsync(id);
-            if (reservations == null)
+            var reservations1 = await _context.Reservations1.FindAsync(id);
+            if (reservations1 == null)
             {
                 return NotFound();
             }
-            return View(reservations);
+            return View(reservations1);
         }
 
-        // POST: Reservations/Edit/5
+        // POST: Reservations1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("Id,Name,NumPeople,Time,Date,Cost,OrderId")] Reservations reservations)
+        public async Task<IActionResult> Edit(int? id, [Bind("Reservation_Id,Name,Phone,Email,NumPeople,Booked_time")] Reservations1 reservations1)
         {
-            if (id != reservations.Id)
+            if (id != reservations1.Reservation_Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Resturaunt_web.Controllers
             {
                 try
                 {
-                    _context.Update(reservations);
+                    _context.Update(reservations1);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReservationsExists(reservations.Id))
+                    if (!Reservations1Exists(reservations1.Reservation_Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Resturaunt_web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(reservations);
+            return View(reservations1);
         }
 
-        // GET: Reservations/Delete/5
+        // GET: Reservations1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var reservations = await _context.Reservations
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (reservations == null)
+            var reservations1 = await _context.Reservations1
+                .FirstOrDefaultAsync(m => m.Reservation_Id == id);
+            if (reservations1 == null)
             {
                 return NotFound();
             }
 
-            return View(reservations);
+            return View(reservations1);
         }
 
-        // POST: Reservations/Delete/5
+        // POST: Reservations1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int? id)
         {
-            var reservations = await _context.Reservations.FindAsync(id);
-            _context.Reservations.Remove(reservations);
+            var reservations1 = await _context.Reservations1.FindAsync(id);
+            _context.Reservations1.Remove(reservations1);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ReservationsExists(int? id)
+        private bool Reservations1Exists(int? id)
         {
-            return _context.Reservations.Any(e => e.Id == id);
+            return _context.Reservations1.Any(e => e.Reservation_Id == id);
         }
     }
 }
