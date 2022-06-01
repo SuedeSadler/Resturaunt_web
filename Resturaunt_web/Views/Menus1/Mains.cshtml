@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Resturaunt_web.Models.Menu>
+
+    @{
+    ViewData["Title"] = "Homepage";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
+    }
+
+    <html>
+    <link rel="stylesheet" href="~/css/main.css" />
+    <body>
+        <div class="return">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Menus1" asp-action="Index">Return</a>
+        </div>
+        <div class="menu">
+            
+            <div class="container p-4 mb-4">
+                <div class="table">
+                    <table style="width:100%">
+
+                
+                        <thead>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/image/@item.Image" asp-append-version="true" width="100" height="100" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        $@Html.DisplayFor(modelItem => item.Price)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+</html>

@@ -28,6 +28,23 @@ namespace Resturaunt_web.Controllers
         {
             return View(await _context.Menu.ToListAsync());
         }
+        public IActionResult Starters()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Starter").ToList());
+        }
+        public IActionResult Mains()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Main").ToList());
+        }
+
+        public IActionResult Drinks()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Drink").ToList());
+        }
+        public IActionResult Deserts()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Desert").ToList());
+        }
 
         // GET: Menus1/Details/5
         public async Task<IActionResult> Details(int? id)
