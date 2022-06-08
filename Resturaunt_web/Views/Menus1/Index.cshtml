@@ -2,9 +2,9 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminHomeLayout.cshtml";
 }
-<link rel="stylesheet" href="~/css/admin.css" />
+@*<link rel="stylesheet" href="~/css/admin.css" />*@
 
 <div class="return">
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
@@ -12,7 +12,7 @@
 
 <h1>Menu Manager</h1>
 
-<div class="container  p-4 mb-4">
+<div class="p-4 mb-4">
     <div class="table">
         <p style="margin-top:10px;margin-bottom:10px;">
             <a asp-action="Create">Create New</a>
