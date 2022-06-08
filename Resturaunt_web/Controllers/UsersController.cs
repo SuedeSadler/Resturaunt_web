@@ -10,22 +10,22 @@ using Resturaunt_web.Models;
 
 namespace Resturaunt_web.Controllers
 {
-    public class Registered_CustomersController : Controller
+    public class UsersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public Registered_CustomersController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Registered_Customers
+        // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Registered_Customers.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
-        // GET: Registered_Customers/Details/5
+        // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var registered_Customers = await _context.Registered_Customers
-                .FirstOrDefaultAsync(m => m.CustomerID == id);
-            if (registered_Customers == null)
+            var users = await _context.Users
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (users == null)
             {
                 return NotFound();
             }
 
-            return View(registered_Customers);
+            return View(users);
         }
 
-        // GET: Registered_Customers/Create
+        // GET: Users/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Registered_Customers/Create
+        // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerID,CustomerName,CustomerEmail,CustomerPhone,CustomerPassword")] Registered_Customers registered_Customers)
+        public async Task<IActionResult> Create([Bind("UserId,FName,LName,Date,Time,NumPeople,Email,Phone")] Users users)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(registered_Customers);
+                _context.Add(users);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(registered_Customers);
+            return View(users);
         }
 
-        // GET: Registered_Customers/Edit/5
+        // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var registered_Customers = await _context.Registered_Customers.FindAsync(id);
-            if (registered_Customers == null)
+            var users = await _context.Users.FindAsync(id);
+            if (users == null)
             {
                 return NotFound();
             }
-            return View(registered_Customers);
+            return View(users);
         }
 
-        // POST: Registered_Customers/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("CustomerID,CustomerName,CustomerEmail,CustomerPhone,CustomerPassword")] Registered_Customers registered_Customers)
+        public async Task<IActionResult> Edit(int? id, [Bind("UserId,FName,LName,Date,Time,NumPeople,Email,Phone")] Users users)
         {
-            if (id != registered_Customers.CustomerID)
+            if (id != users.UserId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Resturaunt_web.Controllers
             {
                 try
                 {
-                    _context.Update(registered_Customers);
+                    _context.Update(users);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!Registered_CustomersExists(registered_Customers.CustomerID))
+                    if (!UsersExists(users.UserId))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Resturaunt_web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(registered_Customers);
+            return View(users);
         }
 
-        // GET: Registered_Customers/Delete/5
+        // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace Resturaunt_web.Controllers
                 return NotFound();
             }
 
-            var registered_Customers = await _context.Registered_Customers
-                .FirstOrDefaultAsync(m => m.CustomerID == id);
-            if (registered_Customers == null)
+            var users = await _context.Users
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (users == null)
             {
                 return NotFound();
             }
 
-            return View(registered_Customers);
+            return View(users);
         }
 
-        // POST: Registered_Customers/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var registered_Customers = await _context.Registered_Customers.FindAsync(id);
-            _context.Registered_Customers.Remove(registered_Customers);
+            var users = await _context.Users.FindAsync(id);
+            _context.Users.Remove(users);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool Registered_CustomersExists(int? id)
+        private bool UsersExists(int id)
         {
-            return _context.Registered_Customers.Any(e => e.CustomerID == id);
+            return _context.Users.Any(e => e.UserId == id);
         }
     }
 }

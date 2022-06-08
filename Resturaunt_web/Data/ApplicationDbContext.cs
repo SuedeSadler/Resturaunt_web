@@ -13,9 +13,8 @@ namespace Resturaunt_web.Data
             : base(options)
         {
         }
-        
+        public DbSet<Resturaunt_web.Models.Reservations> Reservations { get; set; }
+        public DbSet<Resturaunt_web.Models.Users> Users { get; set; }
         public DbSet<Resturaunt_web.Models.Menu> Menu { get; set; }
-        public DbSet<Resturaunt_web.Models.Reservations1> Reservations1 { get; set; }
-        public DbSet<Resturaunt_web.Models.Registered_Customers> Registered_Customers { get; set; }
     }
 }

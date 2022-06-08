@@ -246,32 +246,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.ToTable("Menu");
                 });
 
-            modelBuilder.Entity("Resturaunt_web.Models.Registered_Customers", b =>
-                {
-                    b.Property<int?>("CustomerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustomerEmail")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("CustomerName")
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("CustomerPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("int");
-
-                    b.HasKey("CustomerID");
-
-                    b.ToTable("Registered_Customers");
-                });
-
             modelBuilder.Entity("Resturaunt_web.Models.Reservations", b =>
                 {
                     b.Property<int?>("Id")
@@ -302,33 +276,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("Resturaunt_web.Models.Reservations1", b =>
-                {
-                    b.Property<int?>("Reservation_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Booked_time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("NumPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.HasKey("Reservation_Id");
-
-                    b.ToTable("Reservations1");
-                });
-
             modelBuilder.Entity("Resturaunt_web.Models.Users", b =>
                 {
                     b.Property<int>("UserId")
@@ -336,25 +283,19 @@ namespace Resturaunt_web.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FName")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LName")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("NumPeople")
-                        .HasColumnType("int");
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Time")
+                    b.Property<int?>("Phone")
                         .HasColumnType("int");
 
                     b.HasKey("UserId");
