@@ -149,5 +149,25 @@ namespace Resturaunt_web.Controllers
         {
             return _context.Registered_Customers.Any(e => e.CustomerID == id);
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
     }
 }
