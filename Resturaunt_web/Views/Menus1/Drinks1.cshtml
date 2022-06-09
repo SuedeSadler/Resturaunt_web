@@ -2,29 +2,27 @@
 
     @{
     ViewData["Title"] = "Homepage";
-    Layout = "/Views/Shared/_AdminHomeLayout.cshtml";
+    Layout = "/Views/Shared/_HeaderLayout.cshtml";
     }
 
    <h1>Currrent Menu</h1>
 
-<p>
-    <a asp-action="Create">Add a new item to Menu</a>
-</p>
+
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" aria-current="page"<a asp-action="Index">Whole Menu</a></a>
+    <a class="nav-link" aria-current="page"<a asp-action="Menu">Whole Menu</a></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" aria-current="page"<a asp-action="Starters">Starters</a></a>
+    <a class="nav-link" aria-current="page"<a asp-action="Starters1">Starters</a></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" aria-current="page"<a asp-action="Mains">Mains</a></a>
+    <a class="nav-link" aria-current="page"<a asp-action="Mains1">Mains</a></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" aria-current="page"<a asp-action="Deserts">Deserts</a></</a>
+    <a class="nav-link" aria-current="page"<a asp-action="Deserts1">Deserts</a></</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page"<a asp-action="Drinks">Drinks</a></</a>
+    <a class="nav-link active" aria-current="page"<a asp-action="Drinks1">Drinks</a></</a>
   </li>
   
 </ul>

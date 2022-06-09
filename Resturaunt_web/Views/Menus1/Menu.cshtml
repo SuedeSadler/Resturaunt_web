@@ -5,27 +5,69 @@
     Layout = "/Views/Shared/_HeaderLayout.cshtml";
 }
 
-<html>
-<link rel="stylesheet" href="~/css/main.css" />
-<body>
-    <div class="return">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
-    </div>
-    <div class="menu">
-        <p style="margin-top:10px;margin-bottom:10px;">
-            <a asp-action="Starters">Starters</a>
-        </p>
-        <p style="margin-top:10px;margin-bottom:10px;">
-            <a asp-action="Mains">Mains</a>
-        </p>
-        <p style="margin-top:10px;margin-bottom:10px;">
-            <a asp-action="Deserts">Deserts</a>
-        </p>
-        <p style="margin-top:10px;margin-bottom:10px;">
-            <a asp-action="Drinks">Drinks</a>
-        </p>
-    </div>
-</body>
-
-
-</html>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page"<a asp-action="Menu">Full Menu</a></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page"<a asp-action="Starters1">Starters</a></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page"<a asp-action="Mains1">Mains</a></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page"<a asp-action="Deserts1">Deserts</a></</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page"<a asp-action="Drinks1">Drinks</a></</a>
+  </li>
+  
+</ul>
+<table class="table">
+    <thead>
+        <tr>
+           <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/image/@item.Image" asp-append-version = "true" width= "100" height= "100"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MenuId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MenuId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
