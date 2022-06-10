@@ -23,7 +23,7 @@ namespace Resturaunt_web.Controllers
 
             return View();
         }
-        public IActionResult Index1()
+        public IActionResult Index2()
         {
             return View();
         }
