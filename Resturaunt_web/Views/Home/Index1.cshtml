@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Dynamic Restaurant</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="~/HomeTheme/assets/Logo-Icon.svg" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -30,10 +30,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Bookings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Bookings">Bookings</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -49,7 +48,7 @@
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="Menu">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Menu</h2>
@@ -89,13 +88,13 @@
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                     <div class="col-md-8-center">
-                       <a class="btn btn-primary btn-xl text-uppercase" href="#services">See full Menu</a>
+                       <a class="btn btn-primary btn-xl text-uppercase" asp-area="" asp-controller="Menus1" asp-action="Menu">See Full Menu</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
+        <section class="page-section bg-light" id="Gallery">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Gallery</h2>
@@ -183,7 +182,7 @@
             </div>
         </section>
         <!-- About-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="Bookings">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Booking</h2>
@@ -237,7 +236,7 @@
                     <div class="col-md-8">
                             @*<h4 class="section-heading">Find us at on google maps</h4>*@
                             <iframe class="col-md-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2257.561977334575!2d174.76339735641312!3d-36.850264513945866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47e54e38368d%3A0x4bedaecd7cbf9b6b!2sElliott%20Stables!5e0!3m2!1sen!2snz!4v1654776007980!5m2!1sen!2snz" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>   m ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>   
                     </div>
                 </div>
             </div>

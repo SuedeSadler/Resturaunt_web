@@ -2,10 +2,10 @@
 
     @{
     ViewData["Title"] = "Homepage";
-    Layout = "/Views/Shared/_HeaderLayout.cshtml";
+    Layout = "/Views/Shared/_HomepageLayout.cshtml";
     }
 
-    <h1>Currrent Menu</h1>
+    
 
 
 <ul class="nav nav-tabs">
@@ -58,11 +58,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.MenuId">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.MenuId">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
         </td>
     </tr>
 }
