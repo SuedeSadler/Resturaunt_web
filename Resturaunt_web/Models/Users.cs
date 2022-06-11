@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Resturaunt_web.Models
 {
-    public class SignUp
+    public class Users
     {
         public int ID { get; set; }
         public string EmailAddress { get; set; }

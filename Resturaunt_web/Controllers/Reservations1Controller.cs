@@ -25,9 +25,36 @@ namespace Resturaunt_web.Controllers
             return View(await _context.Reservations1.ToListAsync());
         }
 
+        public IActionResult Reservation()
+        {
+           
+            return View();
+        }
+
+        public async Task<IActionResult> ResConfirmation(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            //var reservations1 = await _context.Reservations1.
+            //    MaxAsync(m => m.Reservation_Id == id);
+            //return (IActionResult)await _context.Reservations1.FindAsync(reservations1);
+
+            
+            var reservations1 = await _context.Reservations1.FindAsync(id);
+            
+            if (reservations1 == null)
+            {
+                return NotFound();
+            }
+            return View(reservations1);
+        }
+
         // GET: Reservations1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -60,14 +87,16 @@ namespace Resturaunt_web.Controllers
             {
                 _context.Add(reservations1);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                int reservation_Id = (int)reservations1.Reservation_Id;
+                int id = reservation_Id;
+                return RedirectToAction(nameof(ResConfirmation));
+                //return RedirectToAction(nameof(Reservation));
             }
+            
             return View(reservations1);
         }
-        public IActionResult Reservation()
-        {
-            return View();
-        }
+     
 
         // GET: Reservations1/Edit/5
         public async Task<IActionResult> Edit(int? id)
