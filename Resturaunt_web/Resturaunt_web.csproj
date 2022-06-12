@@ -13,6 +13,13 @@
 
   <ItemGroup>
     <None Include="Views\Menus\Menu.cshtml" />
+    <None Include="wwwroot\HomeTheme\assets\img\close-icon.svg" />
+    <None Include="wwwroot\HomeTheme\assets\img\logos\facebook.svg" />
+    <None Include="wwwroot\HomeTheme\assets\img\logos\google.svg" />
+    <None Include="wwwroot\HomeTheme\assets\img\logos\ibm.svg" />
+    <None Include="wwwroot\HomeTheme\assets\img\logos\microsoft.svg" />
+    <None Include="wwwroot\HomeTheme\assets\img\navbar-logo.svg" />
+    <None Include="wwwroot\HomeTheme\js\scripts.js" />
   </ItemGroup>
 
   <ItemGroup>

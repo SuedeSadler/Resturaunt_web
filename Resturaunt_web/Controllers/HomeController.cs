@@ -20,10 +20,20 @@ namespace Resturaunt_web.Controllers
 
         public IActionResult Index()
         {
+
+            return View();
+        }
+        public IActionResult Index2()
+        {
             return View();
         }
 
         public IActionResult AdminHomepage()
+        {
+            return View();
+        }
+
+        public IActionResult AdminWelcome()
         {
             return View();
         }

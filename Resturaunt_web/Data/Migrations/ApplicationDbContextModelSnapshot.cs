@@ -272,36 +272,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.ToTable("Registered_Customers");
                 });
 
-            modelBuilder.Entity("Resturaunt_web.Models.Reservations", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Cost")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("NumPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Time")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reservations");
-                });
-
             modelBuilder.Entity("Resturaunt_web.Models.Reservations1", b =>
                 {
                     b.Property<int?>("Reservation_Id")
@@ -327,39 +297,6 @@ namespace Resturaunt_web.Data.Migrations
                     b.HasKey("Reservation_Id");
 
                     b.ToTable("Reservations1");
-                });
-
-            modelBuilder.Entity("Resturaunt_web.Models.Users", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("NumPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Time")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

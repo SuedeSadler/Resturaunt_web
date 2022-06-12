@@ -1,0 +1,111 @@
+﻿@model Resturaunt_web.Models.Reservations1
+
+
+    @{
+    ViewData["Title"] = "ResConfirmation";
+    Layout = "/Views/Shared/_HomepageLayout.cshtml";
+    }
+
+    
+<head>
+  
+  <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+</head>
+
+ <div class="alert alert-primary" role="alert">
+     <div class="text-center">
+         <h4>Booking Details  <i class='fas fa-calendar'></i>  @Html.DisplayFor(model => model.Booked_time) | <i class='fas fa-users'></i> @Html.DisplayFor(model => model.NumPeople) </h4>
+         <h4>Here are the avalible times...</h4>    
+     </div>
+</div>
+     <div class="container">
+         <div class="text-center">
+         <br>
+             <div id="aBtnGroup" class="btn-grou">
+              <button type="button" value="2:00" class="btn btn-warning">2:00pm</button>
+              <button type="button" value="4:00" class="btn btn-warning">4:00pm</button>
+              <button type="button" value="6:00" class="btn btn-warning">6:00pm</button>
+              <button type="button" value="8:00" class="btn btn-warning">8:00pm</button>
+
+             </div>
+          </div>
+    </div>
+          <br>
+    <div class="container">
+         <div class="text-center">
+              <div id="aBtnGroup" class="btn-grou">
+              <button type="button" value="2:30" class="btn btn-warning">2:30pm</button>
+              <button type="button" value="4:30" class="btn btn-warning">4:30pm</button>
+              <button type="button" value="6:30" class="btn btn-warning">6:30pm</button>
+              <button type="button" value="8:30" class="btn btn-warning">8:30pm</button>
+              </div>
+         </div>
+    </div>
+          <br>
+     <div class="container">
+         <div class="text-center">
+             <div id="aBtnGroup" class="btn-grou">
+              <button type="button" value="3:00" class="btn btn-warning">3:00pm</button>
+              <button type="button" value="5:00" class="btn btn-warning">5:00pm</button>
+              <button type="button" value="7:00" class="btn btn-warning">7:00pm</button>
+              <button type="button" value="9:00" class="btn btn-warning">9:00pm</button>
+             </div>
+         </div>
+    </div>
+          <br>
+    <div class="container">
+         <div class="text-center">
+             <div id="aBtnGroup" class="btn-grou">
+              <button type="button" value="3:30" class="btn btn-warning">3:30pm</button>
+              <button type="button" value="5:30" class="btn btn-warning">5:30pm</button>
+              <button type="button" value="7:30" class="btn btn-warning">7:30pm</button>
+              <button type="button" value="9:30" class="btn btn-warning">9:30pm</button>
+             </div>
+        </div>
+    </div>
+    <br>
+ <div class="alert alert-primary" role="alert">
+  <div class="col-md-12">
+      <div class="text-center">
+        <h4><i class='far fa-clock'></i> selected Time: <span id="selectedVal"></span></h4>
+      </div>
+  </div>
+</div>
+ <div class="alert alert-primary" role="alert">
+  <div class="col-md-12">
+      <div class="text-center">
+        <h4><i class='far fa-address-card'></i> Contact details </h4>
+        <h6><i class='fas fa-user-alt'></i> Name: @Html.DisplayFor(model => model.Name) | <i class="fas fa-phone"></i> Mobile Number: @Html.DisplayFor(model => model.Phone)  </h6>
+        <h6><i class="far fa-envelope"></i> Email: @Html.DisplayFor(model => model.Email)</h6>
+        <h4>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Confirm details
+              </label>
+        </h4>
+        <a class="btn btn-primary btn-xl text-uppercase" asp-area="" asp-controller="Reservations1" asp-action="Reservation">Book Now</a>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function() {
+  
+  // Get click event, assign button to var, and get values from that var
+  $('#aBtnGroup button').on('click', function() {
+    var thisBtn = $(this);
+    
+    thisBtn.addClass('').siblings().removeClass('active');
+    var btnText = thisBtn.text();
+    var btnValue = thisBtn.val();
+    console.log(btnText + ' - ' + btnValue);
+    
+    $('#selectedVal').text(btnValue);
+  });
+  
+  // You can use this to set default value
+  // It will fire above click event which will do the updates for you
+  $('#aBtnGroup button[value="M"]').click();
+});</script>

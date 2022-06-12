@@ -24,6 +24,7 @@ namespace Resturaunt_web.Controllers
         {
             return View(await _context.Registered_Customers.ToListAsync());
         }
+      
 
         // GET: Registered_Customers/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -46,6 +46,25 @@ namespace Resturaunt_web.Controllers
             return View(_context.Menu.Where(o => o.FoodType == "Desert").ToList());
         }
 
+     
+        public IActionResult Starters1()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Starter").ToList());
+        }
+        public IActionResult Mains1()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Main").ToList());
+        }
+
+        public IActionResult Drinks1()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Drink").ToList());
+        }
+        public IActionResult Deserts1()
+        {
+            return View(_context.Menu.Where(o => o.FoodType == "Desert").ToList());
+        }
+
         // GET: Menus1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
