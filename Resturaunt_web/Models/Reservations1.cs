@@ -18,7 +18,7 @@ namespace Resturaunt_web.Models
         public System.DateTime Booked_time { get; set; }
         public Reservations1()
         {
-
+          
         }
     }
 }

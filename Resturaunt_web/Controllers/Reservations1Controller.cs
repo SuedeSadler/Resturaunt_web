@@ -13,6 +13,7 @@ namespace Resturaunt_web.Controllers
     public class Reservations1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
+     
 
         public Reservations1Controller(ApplicationDbContext context)
         {
@@ -33,13 +34,10 @@ namespace Resturaunt_web.Controllers
 
         public async Task<IActionResult> ResConfirmation(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            //var reservations1 = await _context.Reservations1.
-            //    MaxAsync(m => m.Reservation_Id == id);
-            //return (IActionResult)await _context.Reservations1.FindAsync(reservations1);
+           
+               
+            id = _context.Reservations1.Max(x => x.Reservation_Id);
+        
 
             
             var reservations1 = await _context.Reservations1.FindAsync(id);
@@ -88,8 +86,8 @@ namespace Resturaunt_web.Controllers
                 _context.Add(reservations1);
                 await _context.SaveChangesAsync();
 
-                int reservation_Id = (int)reservations1.Reservation_Id;
-                int id = reservation_Id;
+                int id = (int)reservations1.Reservation_Id;
+                
                 return RedirectToAction(nameof(ResConfirmation));
                 //return RedirectToAction(nameof(Reservation));
             }
