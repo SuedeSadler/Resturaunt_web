@@ -32,6 +32,21 @@ namespace Resturaunt_web.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Emailconfirmation(int? id)
+        {
+
+            id = _context.Reservations1.Max(x => x.Reservation_Id);
+
+
+
+            var reservations1 = await _context.Reservations1.FindAsync(id);
+
+            if (reservations1 == null)
+            {
+                return NotFound();
+            }
+            return View(reservations1);
+        }
         public async Task<IActionResult> ResConfirmation(int? id)
         {
            
