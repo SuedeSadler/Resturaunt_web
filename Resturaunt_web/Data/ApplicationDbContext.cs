@@ -9,6 +9,8 @@ namespace Resturaunt_web.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        internal object reservations1;
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

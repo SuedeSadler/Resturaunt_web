@@ -1,0 +1,47 @@
+﻿@model Resturaunt_web.Models.Reservations1
+
+
+    @{
+    ViewData["Title"] = "ResConfirmation";
+    Layout = "/Views/Shared/_HomepageLayout.cshtml";
+    }
+
+    
+<head>
+  
+  <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+</head>
+
+
+ <div class="alert alert-primary" role="alert">
+  <div class="col-md-12">
+      <div class="text-center">
+          <h1><i class='fas fa-calendar'></i></h1>
+          <h3> Thanks @Html.DisplayFor(model => model.Name)</h3>
+        <h4>Your Booking on the @Html.DisplayFor(model => model.Booked_time) for @Html.DisplayFor(model => model.NumPeople) People has been made and an email confirmation has been sent to @Html.DisplayFor(model => model.Email)</h4>
+      </div>
+  </div>
+</div>
+
+<<script>
+    $(document).ready(function() {
+  
+  // Get click event, assign button to var, and get values from that var
+  $('#aBtnGroup button').on('click', function() {
+    var thisBtn = $(this);
+    
+    thisBtn.addClass('').siblings().removeClass('active');
+    var btnText = thisBtn.text();
+    var btnValue = thisBtn.val();
+    console.log(btnText + ' - ' + btnValue);
+    
+    $('#selectedVal').text(btnValue);
+  });
+  
+  // You can use this to set default value
+  // It will fire above click event which will do the updates for you
+  $('#aBtnGroup button[value="M"]').click();
+});</script>
