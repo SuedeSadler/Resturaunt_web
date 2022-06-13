@@ -2,12 +2,12 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout = "~/Pages/_Layout.cshtml";
+    Layout = "/Views/Shared/_HomepageLayout.cshtml";
+    
 }
 
 <h1>Login</h1>
 
-<br>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -32,6 +32,7 @@
 <a class="nav-link text-dark" asp-area="" asp-controller="SignUp" asp-action="Index">I don't have an account</a>
 <br />
 <a class="nav-link text-dark" asp-area="" asp-controller="Registered_Customers" asp-action="ForgotPassword">I forgot my password</a>
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+*@
