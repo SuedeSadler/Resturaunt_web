@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-
-    <Content Remove="Views\Menus\Menu.cshtml" />
+    <Compile Remove="Views\Menus\**" />
+    <Content Remove="Views\Menus\**" />
+    <EmbeddedResource Remove="Views\Menus\**" />
+    <None Remove="Views\Menus\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Menus\Menu.cshtml" />
+    <Content Include="Services\Data\SecurityDAO.cs" />
+    <Content Include="Services\SecurityService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\HomeTheme\assets\img\close-icon.svg" />
     <None Include="wwwroot\HomeTheme\assets\img\logos\facebook.svg" />
     <None Include="wwwroot\HomeTheme\assets\img\logos\google.svg" />
@@ -34,10 +40,21 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\Image\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
   </ItemGroup>
 
 </Project>

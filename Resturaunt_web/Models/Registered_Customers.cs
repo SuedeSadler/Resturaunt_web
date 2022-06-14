@@ -7,11 +7,8 @@ namespace Resturaunt_web.Models
     {
         [Key]
         public int ?CustomerID { get; set; }
-        [StringLength(100)]
-        [Column(TypeName ="varchar(100)")]
+        
         public string CustomerName { get; set; }
-        [StringLength (50)]
-        [Column(TypeName ="varchar(50)")]
         [DataType(DataType.EmailAddress)]
         public string CustomerEmail { get; set; }
         [DataType(DataType.PhoneNumber)]
