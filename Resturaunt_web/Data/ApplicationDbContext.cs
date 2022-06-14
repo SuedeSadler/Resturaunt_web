@@ -21,5 +21,6 @@ namespace Resturaunt_web.Data
         public DbSet<Resturaunt_web.Models.Registered_Customers> Registered_Customers { get; set; }
         public DbSet<Resturaunt_web.Models.Login> Login { get; set; }
         public DbSet<Resturaunt_web.Models.SignUp> SignUp { get; set; }
+        //public DbSet<Resturaunt_web.Models.SignUp> SignUp { get; set; }
     }
 }

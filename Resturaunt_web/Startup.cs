@@ -67,5 +67,6 @@ namespace Resturaunt_web
                 endpoints.MapRazorPages();
             });
         }
+
     }
 }
