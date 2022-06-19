@@ -219,6 +219,19 @@ namespace Resturaunt_web.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Resturaunt_web.Models.Login", b =>
+                {
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Login");
+                });
+
             modelBuilder.Entity("Resturaunt_web.Models.Menu", b =>
                 {
                     b.Property<int>("MenuId")
