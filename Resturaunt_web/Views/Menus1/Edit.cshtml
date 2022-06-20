@@ -17,10 +17,9 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MenuId" />
-              <div class="form-group">
+            <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
-                <br>
-                <input asp-for="ImageFile" accept="image/*" />
+                <input asp-for="ImageFile" class="form-control" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,7 +43,7 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-warning" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

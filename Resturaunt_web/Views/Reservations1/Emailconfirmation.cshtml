@@ -21,13 +21,12 @@
       <div class="text-center">
           <h1><i class='fas fa-calendar'></i></h1>
           <h3> Thanks @Html.DisplayFor(model => model.Name)</h3>
-          <h4>Your Booking on the @Html.DisplayFor(model => model.Booked_time) for @Html.DisplayFor(model => model.NumPeople) People has been made and an email confirmation has been sent to @Html.DisplayFor(model => model.Email)</h4>
-          <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Home" asp-action="Index">Return home</a>     
-    </div>
+        <h4>Your Booking on the @Html.DisplayFor(model => model.Booked_time) for @Html.DisplayFor(model => model.NumPeople) People has been made and an email confirmation has been sent to @Html.DisplayFor(model => model.Email)</h4>
+      </div>
   </div>
 </div>
 
-<script>
+<<script>
     $(document).ready(function() {
   
   // Get click event, assign button to var, and get values from that var
