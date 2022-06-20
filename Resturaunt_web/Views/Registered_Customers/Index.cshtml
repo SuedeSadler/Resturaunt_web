@@ -2,11 +2,13 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_HeaderLayout.cshtml";
 }
-@*<link rel="stylesheet" href="~/css/admin.css" />*@
+<link rel="stylesheet" href="~/css/admin.css" />
 
-
+<div class="return">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHomepage">Return</a>
+</div>
 
 <h1>User Manager</h1>
 
